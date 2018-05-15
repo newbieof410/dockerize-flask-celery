@@ -1,0 +1,22 @@
+version: '3'
+services:
+  rabbit:
+    image: rabbitmq:latest
+    hostname: black-rabbit
+    environment:
+      - RABBITMQ_DEFAULT_USER=admin
+      - RABBITMQ_DEFAULT_PASS=admin-pass
+
+  worker:
+    build: .
+    entrypoint: ["celery"]
+    command: ["worker", "-A", "app.celery_worker", "--loglevel=info"]
+    depends_on:
+      - rabbit
+
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    depends_on:
+      - rabbit
