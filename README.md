@@ -1,5 +1,5 @@
 # Dockerize Flask Celery
-这是一个在 `Flask` 中使用 `Celery` 的简单示例. 展示了当 `Flask` 应用采用工厂模式创建时, 与 `Celery` 结合使用的一种方式.
+这是一个在 `Flask` 中使用 `Celery` 的简单示例. 展示了当 `Flask` 应用采用工厂模式创建时, 与 `Celery` 结合使用的一种方式, 还有如何把它们构建在容器中.
 
 ## Set Up
 - 克隆仓库.
